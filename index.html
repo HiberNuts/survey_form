@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Navbar</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            .navbar{
+                overflow: hidden;
+                display: flex;
+                
+            }
+            .navbar img{
+                margin-right: 200;
+            }
+           
+            .navbar a { 
+                display: flex;
+                color:black;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            
+            .navbar .icon{
+                display: none;
+                transform: rotateX(150deg);
+            }
+
+            @media screen and (max-width:600px){
+                .navbar a.icon{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    display: block;
+                    transform: rotateX(150deg);
+                }
+                .navbar a{
+                    display: none;
+                    /* transition:cubic-bezier(0.6, -0.28, 0.735, 0.045) */
+                }
+
+            }
+            @media screen and (max-width:600px){
+                .responsive{
+                    position: relative;
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .responsive a{
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="navbar" id="mynavbar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcof3pIm8ZLI0NMZKT7T47CuANQmWvSzd8EA&usqp=CAU" width="200" height="80" alt=""/>
+            <!-- <div class="nav-items"> -->
+                <a href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+            <!-- </div> -->
+            
+        </div>
+        <div>
+            <p>this a paragraph</p>
+        </div>
+
+        <script>
+            function myFunction(){
+                let x  = document.getElementById("mynavbar");
+                if(x.className==="navbar"){
+                    x.className += " responsive";
+                }
+                else {
+                    x.className="navbar";
+                }
+            }
+
+        </script>
+       
+    </body>
+</html>

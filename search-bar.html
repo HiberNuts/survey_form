@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>search bar</title>
+
+        <style>
+            body{
+                display: flex;
+                place-content: center;
+                background-color: #eacda3;
+                position: relative;
+            }
+            .container{
+                display: flex;
+                place-content: center;
+                justify-content: center;
+                align-items: center;
+            }
+            .input{
+                height: 2rem;
+                width: 3rem;
+                padding: 0.5rem;
+                font-size: 1rem;
+                border: 0;
+                transition: width 0.5s;
+            }
+
+            .btn{
+                height: 2rem;
+                width: 3rem;
+                padding: 0.5rem;
+                font-size: 1rem;
+                border: none;
+                position: absolute;
+                transition: transform 0.5s;
+                
+                
+            }
+
+            .container.active .input{
+                width:10rem;
+            }
+            .container.active .btn{
+                transform: translateX(7rem);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <input type="text" class="input " placeholder="Search...">
+            <button class="btn" onclick="expand()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </div>
+
+
+        <script>
+            let btn = document.querySelector(".btn");
+            let input = document.querySelector(".input");
+            let container = document.querySelector(".container");
+
+            function expand(){
+                // container.classList.add("active"); 
+                container.classList.toggle("active");
+            }
+            
+            
+
+
+            
+
+        </script>
+    </body>
+</html>
